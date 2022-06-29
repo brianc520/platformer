@@ -27,6 +27,8 @@ function addItems() {
 
   // Adding Poison and Star
   createItem(500, 250, "poison");
+  createItem(50, 450, "poison");
+  createItem(200, 250, "poison");
   createItem(300 ,20, "star");
 }
 
@@ -64,9 +66,14 @@ function createBadge() {
 // when the player collects an item on the screen
 function itemHandler(player, item) {
   item.kill();
-  currentScore = currentScore + 10;
-  if (currentScore === winningScore) {
-    createBadge();
+  if(item.key == "coin"){
+    currentScore = currentScore + 10;
+  }
+  if(item.key == "poison"){
+    currentScore = currentScore - 25;
+  }
+  if(item.key == "star"){
+    currentScore = currentScore + 25;
   }
 }
 
