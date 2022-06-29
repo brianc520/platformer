@@ -15,13 +15,30 @@ var winningScore = 10;
 // add collectable items to the game
 function addItems() {
   items = game.add.physicsGroup();
-  createItem(375, 300, "coin");
+  createItem(300, 250, "coin");
+  createItem(225, 75, "coin");
+  createItem(465, 350, "coin");
+  createItem(175, 500, "coin");
+  createItem(280, 350, "coin");
+  createItem(75, 125, "coin");
+  createItem(675, 500, "coin");
+  createItem(500, 500, "coin");
+  createItem(325, 500, "coin");
 }
 
 // add platforms to the game
 function addPlatforms() {
   platforms = game.add.physicsGroup();
-  platforms.create(450, 150, "platform");
+  platforms.create(200, 300, "platform2");
+  platforms.create(5, 200, "platform2");
+  platforms.create(400, 400, "platform2");
+  platforms.create(100, 550, "platform2");
+  platforms.create(150, 150, "platform");
+  platforms.create(200, 400, "platform");
+  platforms.create(600, 550, "platform");
+  platforms.create(450, 550, "platform");
+  platforms.create(275, 550, "platform");
+ 
   platforms.setAll("body.immovable", true);
 }
 
@@ -70,6 +87,7 @@ window.onload = function () {
 
     //Load images
     game.load.image("platform", "assets/platform_1.png");
+    game.load.image("platform2", "assets/platform_2.png");
 
     //Load spritesheets
     game.load.spritesheet("player", "assets/chalkers.png", 48, 62);
@@ -131,9 +149,9 @@ window.onload = function () {
       jumpButton.isDown &&
       (player.body.onFloor() || player.body.touching.down)
     ) {
-      player.body.velocity.y = -400;
+      player.body.velocity.y = -500;
     }
-    // when the player winw the game
+    // when the player wins the game
     if (won) {
       winningMessage.text = "YOU WIN!!!";
     }
