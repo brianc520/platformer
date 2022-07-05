@@ -102,7 +102,7 @@ window.onload = function () {
 
 
     //Load spritesheets
-    game.load.spritesheet("player", "assets/mikethefrog.png", 32, 32);
+    game.load.spritesheet("player", "assets/megaman.png", 160, 160);
     game.load.spritesheet("coin", "assets/coin.png", 36, 44);
     game.load.spritesheet("badge", "assets/badge.png", 42, 54);
     game.load.spritesheet("poison", "assets/poison.png", 32, 32);
