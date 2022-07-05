@@ -85,7 +85,7 @@ function badgeHandler(player, badge) {
 
 // setup game when the web page loads
 window.onload = function () {
-  game = new Phaser.Game(800, 600, Phaser.AUTO, "", {
+  game = new Phaser.Game(1855, 964, Phaser.AUTO, "", {
     preload: preload,
     create: create,
     update: update,
@@ -98,11 +98,11 @@ window.onload = function () {
 
     //Load images
     game.load.image("platform", "assets/platform_1.png");
-    game.load.image("platform2", "assets/platform_2.png");
-    game.load.image("poison", "assets/poison.png");
+    game.load.image("platform2", "assets/block.png");
+
 
     //Load spritesheets
-    game.load.spritesheet("player", "assets/chalkers.png", 48, 62);
+    game.load.spritesheet("player", "assets/mikethefrog.png", 32, 32);
     game.load.spritesheet("coin", "assets/coin.png", 36, 44);
     game.load.spritesheet("badge", "assets/badge.png", 42, 54);
     game.load.spritesheet("poison", "assets/poison.png", 32, 32);
@@ -163,7 +163,7 @@ window.onload = function () {
       jumpButton.isDown &&
       (player.body.onFloor() || player.body.touching.down)
     ) {
-      player.body.velocity.y = -500;
+      player.body.velocity.y = -450;
     }
     // when the player wins the game
     if (won) {
